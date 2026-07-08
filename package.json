@@ -5,7 +5,7 @@
   "description": "Spendy — AI-powered expense tracker for students and young professionals.",
   "scripts": {
     "build:config": "node scripts/inject-env.js",
-    "vercel-build": "npm run build:config",
+    "build": "next build",
     "dev": "npx serve . -l 5500"
   },
   "engines": {
