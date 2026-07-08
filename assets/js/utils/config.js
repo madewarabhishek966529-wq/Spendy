@@ -14,8 +14,8 @@
 // ============================================================================
 
 export const SPENDY_CONFIG = Object.freeze({
-  SUPABASE_URL: '__SPENDY_ENV__SUPABASE_URL__',
-  SUPABASE_ANON_KEY: '__SPENDY_ENV__SUPABASE_ANON_KEY__',
+  SUPABASE_URL: 'https://xzltepxmaedhevwvsnjt.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6bHRlcHhtYWVkaGV2d3Zzbmp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1MDI2OTgsImV4cCI6MjA5OTA3ODY5OH0.rzYaBi12lGu9XovMTvFRsiDXl26UT5Ch2sTbwLCz8ao',
   APP_NAME: 'Spendy',
-  APP_ENV: '__SPENDY_ENV__NODE_ENV__' || 'development',
+  APP_ENV: 'development' || 'development',
 });

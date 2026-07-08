@@ -1,5 +1,9 @@
 # Spendy — Phases 1–6: Database, Auth, UI, Live Data, Analytics & AI Features
 
+> **New here?** See [`SETUP.md`](./SETUP.md) for the condensed setup-and-run
+> steps. This README covers the full feature walkthrough and per-phase
+> verification checklist.
+
 Phase 1 built the foundation: the PostgreSQL schema (with full Row Level
 Security) and a working Google OAuth login → protected dashboard → logout
 loop. Phase 2 builds the full app shell and every page in the spec, wired
