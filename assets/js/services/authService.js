@@ -64,7 +64,7 @@ export async function signInWithGoogle() {
 export async function signOut() {
   const { error } = await supabase.auth.signOut();
   if (error) throw error;
-  window.location.href = '/index.html';
+  window.location.href = '/pages/login.html';
 }
 
 export function getCurrentSession() {

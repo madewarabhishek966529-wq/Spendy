@@ -17,6 +17,7 @@ export function applyStoredTheme() {
 export function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem(STORAGE_KEY, theme);
+  window.dispatchEvent(new CustomEvent('spendy:theme-change', { detail: { theme } }));
 }
 
 export function toggleTheme() {

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transactions — Spendy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/shell.css" />
+  <link rel="stylesheet" href="/assets/css/dashboard.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+</head>
+<body>
+  <div id="auth-loading" class="page-loading">
+    <span class="spinner" style="border-top-color:var(--spendy-primary); border-color:rgba(16,185,129,0.2);"></span>
+    Loading Spendy…
+  </div>
+
+  <div class="app-shell">
+    <aside id="app-sidebar" class="app-sidebar"></aside>
+
+    <div>
+      <header id="app-topbar" class="app-topbar"></header>
+
+      <main class="app-content">
+        <div class="page-toolbar">
+          <div class="search-input-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="search" class="field-input" id="tx-search" placeholder="Search transactions…" />
+          </div>
+          <div class="filter-row">
+            <select class="field-input" id="tx-filter-type" style="width:auto;">
+              <option value="all">All types</option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+            <select class="field-input" id="tx-filter-category" style="width:auto;">
+              <option value="all">All categories</option>
+              <option>Food</option><option>Transport</option><option>Shopping</option>
+              <option>Education</option><option>Medical</option><option>Entertainment</option>
+              <option>Bills</option><option>Rent</option><option>Travel</option><option>Other</option>
+            </select>
+            <button class="btn btn--ghost" id="export-csv-btn">Export CSV</button>
+            <button class="btn btn--ghost" id="export-pdf-btn">Export PDF</button>
+            <button class="btn btn--ghost" id="voice-tx-btn" title="Add by voice"></button>
+            <button class="btn btn--primary" id="add-tx-btn">Add transaction</button>
+          </div>
+        </div>
+
+        <div class="glass-card data-table-card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="is-sortable" data-sort="transaction_date"><span class="th-inner">Date <span class="sort-arrow"></span></span></th>
+                <th class="is-sortable" data-sort="title"><span class="th-inner">Title <span class="sort-arrow"></span></span></th>
+                <th>Category / Source</th>
+                <th>Description</th>
+                <th class="is-sortable" data-sort="amount"><span class="th-inner">Amount <span class="sort-arrow"></span></span></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tx-table-body">
+              <tr><td colspan="6">
+                <div class="empty-state-block">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h13l-3-3M21 17H8l3 3"/></svg>
+                  <h3>No transactions yet</h3>
+                  <p>Add your first income or expense to start building your history.</p>
+                </div>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="tx-pagination" class="u-flex u-center" style="gap:var(--sp-2); margin-top:var(--sp-5);"></div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/assets/js/pages/transactions.js"></script>
+</body>
+</html>

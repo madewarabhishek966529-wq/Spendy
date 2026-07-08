@@ -1,0 +1,148 @@
+/* ============================================================================
+   Spendy — Dashboard Page
+   ============================================================================ */
+
+.page-loading {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center; gap: var(--sp-3);
+  background: var(--bg-base); color: var(--text-secondary); font-size: var(--fs-sm);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+.stat-card {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.stat-card__label { font-size: var(--fs-sm); font-weight: 500; }
+.stat-card__value { font-family: var(--font-display); font-size: var(--fs-2xl); font-weight: 700; }
+.stat-card__value--success { color: var(--spendy-success); }
+.stat-card__value--danger { color: var(--spendy-danger); }
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--sp-5);
+}
+
+.panel { padding: var(--sp-5); }
+.panel__header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+.panel__header h2 { font-size: var(--fs-lg); }
+
+.empty-state {
+  font-size: var(--fs-sm);
+  padding: var(--sp-6) 0;
+  text-align: center;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.transaction-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--border-glass);
+}
+.transaction-row:last-child { border-bottom: none; padding-bottom: 0; }
+.transaction-row__info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.transaction-row__title {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.transaction-row__meta { font-size: var(--fs-xs); }
+.transaction-row__amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+}
+.transaction-row__amount--success { color: var(--spendy-success); }
+.transaction-row__amount--danger { color: var(--spendy-danger); }
+
+.budget-summary {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-2);
+}
+.budget-summary__spent {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+.budget-summary__total { font-size: var(--fs-sm); }
+
+.budget-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--border-glass);
+  overflow: hidden;
+  margin-bottom: var(--sp-3);
+}
+.budget-bar__fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--spendy-gradient-hero);
+  transition: width var(--dur-slow) var(--ease-out);
+}
+.budget-bar__fill--warning { background: var(--spendy-warning); }
+.budget-bar__fill--danger { background: var(--spendy-danger); }
+
+.budget-note { font-size: var(--fs-sm); line-height: 1.5; }
+
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--spendy-gradient-hero);
+  color: white;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 28px rgba(16,185,129,0.35);
+  transition: transform var(--dur-fast) var(--ease-out);
+  z-index: 25;
+}
+.fab:hover { transform: scale(1.06) rotate(90deg); }
+
+.fab--secondary {
+  right: 28px;
+  bottom: 96px;
+  width: 48px; height: 48px;
+  background: var(--bg-glass);
+  color: var(--spendy-primary);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-soft);
+}
+.fab--secondary:hover { transform: scale(1.06); }
+
+
+@media (max-width: 1080px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) {
+  .stat-grid { grid-template-columns: 1fr; }
+}

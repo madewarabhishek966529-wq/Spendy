@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics — Spendy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/shell.css" />
+  <link rel="stylesheet" href="/assets/css/dashboard.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+</head>
+<body>
+  <div id="auth-loading" class="page-loading">
+    <span class="spinner" style="border-top-color:var(--spendy-primary); border-color:rgba(16,185,129,0.2);"></span>
+    Loading Spendy…
+  </div>
+
+  <div class="app-shell">
+    <aside id="app-sidebar" class="app-sidebar"></aside>
+
+    <div>
+      <header id="app-topbar" class="app-topbar"></header>
+
+      <main class="app-content">
+        <div class="page-toolbar">
+          <div class="filter-row">
+            <select class="field-input" id="range-select" style="width:auto;">
+              <option value="day">Daily</option>
+              <option value="week">Weekly</option>
+              <option value="month" selected>Monthly</option>
+              <option value="year">Yearly</option>
+            </select>
+          </div>
+        </div>
+
+        <section class="chart-grid">
+          <div class="glass-card chart-card">
+            <h2>Income vs Expense</h2>
+            <div class="chart-canvas-wrap"><canvas id="chart-income-vs-expense"></canvas></div>
+          </div>
+          <div class="glass-card chart-card">
+            <h2>Category Breakdown</h2>
+            <div class="chart-canvas-wrap"><canvas id="chart-category-pie"></canvas></div>
+          </div>
+          <div class="glass-card chart-card">
+            <h2>Spending Over Time</h2>
+            <div class="chart-canvas-wrap"><canvas id="chart-spending-trend"></canvas></div>
+          </div>
+          <div class="glass-card chart-card">
+            <h2>Savings Trend</h2>
+            <div class="chart-canvas-wrap"><canvas id="chart-savings-trend"></canvas></div>
+          </div>
+          <div class="glass-card chart-card" style="grid-column: 1 / -1;">
+            <h2>Budget Progress</h2>
+            <div class="chart-canvas-wrap chart-canvas-wrap--wide"><canvas id="chart-budget-progress"></canvas></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/assets/js/pages/analytics.js"></script>
+</body>
+</html>

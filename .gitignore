@@ -1,0 +1,13 @@
+# Environment variables — never commit real secrets
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+*.log
+
+# Supabase CLI local state
+.supabase/

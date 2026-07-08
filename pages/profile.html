@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — Spendy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/shell.css" />
+  <link rel="stylesheet" href="/assets/css/dashboard.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+</head>
+<body>
+  <div id="auth-loading" class="page-loading">
+    <span class="spinner" style="border-top-color:var(--spendy-primary); border-color:rgba(16,185,129,0.2);"></span>
+    Loading Spendy…
+  </div>
+
+  <div class="app-shell">
+    <aside id="app-sidebar" class="app-sidebar"></aside>
+
+    <div>
+      <header id="app-topbar" class="app-topbar"></header>
+
+      <main class="app-content">
+        <div class="glass-card profile-header">
+          <img id="profile-avatar" src="" alt="" />
+          <div>
+            <h2 id="profile-name">—</h2>
+            <p class="u-muted" id="profile-email">—</p>
+            <p class="u-muted" id="profile-since" style="font-size: var(--fs-xs); margin-top:4px;"></p>
+          </div>
+        </div>
+
+        <div class="profile-stat-grid">
+          <div class="glass-card profile-stat">
+            <span class="u-muted" style="font-size:var(--fs-xs);">Total Income</span>
+            <span class="value" id="profile-total-income">₹0</span>
+          </div>
+          <div class="glass-card profile-stat">
+            <span class="u-muted" style="font-size:var(--fs-xs);">Total Expenses</span>
+            <span class="value" id="profile-total-expenses">₹0</span>
+          </div>
+          <div class="glass-card profile-stat">
+            <span class="u-muted" style="font-size:var(--fs-xs);">Current Balance</span>
+            <span class="value" id="profile-balance">₹0</span>
+          </div>
+          <div class="glass-card profile-stat">
+            <span class="u-muted" style="font-size:var(--fs-xs);">Savings</span>
+            <span class="value" id="profile-savings">₹0</span>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/assets/js/pages/profile.js"></script>
+</body>
+</html>
