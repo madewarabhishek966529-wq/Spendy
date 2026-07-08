@@ -1,0 +1,92 @@
+/* ============================================================================
+   Spendy — Design Tokens
+   Brand: Primary #10B981 (emerald) / Secondary #4F46E5 (indigo) / Accent #06B6D4 (cyan)
+   Type:  Poppins (display) + Inter (body)
+   ============================================================================ */
+
+:root {
+  /* ---- Brand ---- */
+  --spendy-primary: #10B981;
+  --spendy-primary-dark: #0D9668;
+  --spendy-primary-light: #34D399;
+  --spendy-secondary: #4F46E5;
+  --spendy-secondary-dark: #4338CA;
+  --spendy-accent: #06B6D4;
+
+  --spendy-gradient-hero: linear-gradient(135deg, #10B981 0%, #06B6D4 50%, #4F46E5 100%);
+  --spendy-gradient-card: linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(6,182,212,0.08) 100%);
+
+  /* ---- Semantic ---- */
+  --spendy-success: #10B981;
+  --spendy-danger: #EF4444;
+  --spendy-warning: #F59E0B;
+  --spendy-info: #06B6D4;
+
+  /* ---- Light theme surface ---- */
+  --bg-base: #F7F9FB;
+  --bg-elevated: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --border-glass: rgba(15, 23, 42, 0.08);
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.06);
+  --shadow-elevated: 0 20px 50px rgba(15, 23, 42, 0.10);
+
+  /* ---- Typography ---- */
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 3rem;
+
+  /* ---- Spacing scale ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 450ms;
+}
+
+[data-theme="dark"] {
+  --bg-base: #0B1120;
+  --bg-elevated: #131B2E;
+  --bg-glass: rgba(19, 27, 46, 0.65);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.30);
+  --shadow-elevated: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --spendy-gradient-card: linear-gradient(135deg, rgba(16,185,129,0.16) 0%, rgba(79,70,229,0.14) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

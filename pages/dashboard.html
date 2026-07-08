@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Spendy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <style>
+    #auth-loading {
+      position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: var(--bg-base); z-index: 100; gap: var(--sp-3); color: var(--text-secondary);
+    }
+    .shell-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--sp-5) var(--sp-6); border-bottom: 1px solid var(--border-glass);
+    }
+    .user-chip { display: flex; align-items: center; gap: var(--sp-3); }
+    .user-chip img { width: 38px; height: 38px; border-radius: 50%; }
+    .shell-main { padding: var(--sp-6); max-width: 720px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <div id="auth-loading"><span class="spinner" style="border-top-color:var(--spendy-primary); border-color:rgba(16,185,129,0.2);"></span> Loading Spendy…</div>
+
+  <header class="shell-header">
+    <span class="font-display" style="font-weight:700; font-size:var(--fs-lg); color:var(--spendy-primary);">Spendy</span>
+    <div class="user-chip">
+      <img id="user-avatar" src="" alt="" />
+      <span id="user-name" class="u-muted"></span>
+      <button id="logout-btn" class="btn btn--ghost">Log out</button>
+    </div>
+  </header>
+
+  <main class="shell-main">
+    <div class="glass-card" style="padding: var(--sp-6);">
+      <h1 style="margin-bottom: var(--sp-2);">Welcome back 👋</h1>
+      <p class="u-muted">
+        Phase 1 (database + authentication) is live: your session persists across reloads,
+        this page is protected, and your profile row was auto-created on first sign-in.
+        The full balance, insights, and analytics dashboard lands in Phase 3.
+      </p>
+    </div>
+  </main>
+
+  <script type="module" src="/assets/js/pages/dashboard.js"></script>
+</body>
+</html>
